@@ -1,6 +1,7 @@
 class_name Speaker
 extends Node
 
+@export var speaker_name : String
 @export var show_question_mark : bool
 @export_group("AnimatedSprite2D")
 @export var animatedSprite2D : AnimatedSprite2D

@@ -8,6 +8,10 @@ func _process(delta):
 	if speaker.active:
 		return
 	
+	if player.eating_rat:
+		play("eat_rat")
+		return
+	
 	if shoot_behavior.shooting:
 		return
 	

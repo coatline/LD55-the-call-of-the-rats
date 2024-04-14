@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://db5jlfcom2a8o"]
+[gd_scene load_steps=48 format=3 uid="uid://db5jlfcom2a8o"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_6uv6y"]
 [ext_resource type="Texture2D" uid="uid://cyaem0ncl8cnn" path="res://Graphics/player_sheet.png" id="2_1vvm6"]
@@ -14,6 +14,22 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jsmeg"]
 radius = 2.23607
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvojg"]
+atlas = ExtResource("2_1vvm6")
+region = Rect2(390, 0, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f88tt"]
+atlas = ExtResource("2_1vvm6")
+region = Rect2(403, 0, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heg1m"]
+atlas = ExtResource("2_1vvm6")
+region = Rect2(416, 0, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji0ux"]
+atlas = ExtResource("2_1vvm6")
+region = Rect2(91, 0, 13, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jkl5"]
 atlas = ExtResource("2_1vvm6")
@@ -113,6 +129,29 @@ region = Rect2(169, 0, 13, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rnop1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvojg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f88tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvojg")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_f88tt")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_heg1m")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_ji0ux")
+}],
+"loop": false,
+"name": &"eat_rat",
+"speed": 3.5
+}, {
 "frames": [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_7jkl5")
@@ -297,8 +336,9 @@ shoot_behavior = NodePath("ShootBehavior")
 shape = SubResource("CircleShape2D_jsmeg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("player", "shoot_behavior", "speaker")]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_rnop1")
-animation = &"surprised"
+animation = &"eat_rat"
 autoplay = "get_up"
 script = ExtResource("3_uxdna")
 player = NodePath("..")
@@ -329,6 +369,7 @@ position = Vector2(0, -4)
 
 [node name="ShootEffect" type="AnimatedSprite2D" parent="."]
 visible = false
+z_index = 1
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_8paat")
 frame = 2
@@ -346,6 +387,7 @@ shoot_delay = 0.2
 
 [node name="Speaker" type="Node2D" parent="." node_paths=PackedStringArray("animatedSprite2D")]
 script = ExtResource("9_q7rvt")
+speaker_name = "jimmy"
 animatedSprite2D = NodePath("../AnimatedSprite2D")
 
 [connection signal="area_entered" from="DialogueDetector" to="DialogueDetector" method="_on_area_entered"]

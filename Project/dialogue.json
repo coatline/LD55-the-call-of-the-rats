@@ -2,11 +2,11 @@
 	"meet-bob": {
 		"quotes": [
 			{
-				"speaking": "??",
+				"speaking": "bob",
 				"quote": "hey youngin."
 			},
 			{
-				"speaking": "??",
+				"speaking": "bob",
 				"quote": "what're you doin out here?"
 			},
 			{
@@ -24,8 +24,8 @@
 			{
 				"speaking": "bob",
 				"quote": "is that your shotty over there?",
-				"cam_x": "16",
-				"cam_y": "17"
+				"cam_x": "174",
+				"cam_y": "-15"
 			},
 			{
 				"speaking": "jimmy",
@@ -134,6 +134,224 @@
 		]
 	},
 
+	
+	"meet-timothy": {
+		"quotes": [
+			{
+				"speaking": "timothy",
+				"quote": "hello jimmy my boy."
+			},
+			{
+				"speaking": "timothy",
+				"quote": "you didn't find your pa i suppose?"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]no.."
+			},
+			{
+				"speaking": "timothy",
+				"quote": "*mischievously* then it's all lined up for me to win the rat hunt."
+			},
+			{
+				"speaking": "timothy",
+				"quote": "with my new glasses, i can finally see!",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "timothy",
+				"quote": "remember when i almost beat your pa that one year?"
+			},
+			{
+				"speaking": "timothy",
+				"quote": "and that was [pulse]WITHOUT my glasses!",
+				"emotion": "surprised",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "you killed [pulse]1[/pulse]. my pa had [pulse]8[/pulse]."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "and i'm pretty sure you had contacts in."
+			},
+			{
+				"speaking": "timothy",
+				"quote": "[shake amp=.5]*ANGER*",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "timothy",
+				"quote": "well [shake amp=.5]you[/shake] sure aren't winning."
+			},
+			{
+				"speaking": "timothy",
+				"quote": "10 years and you haven't killed a [shake amp=0.35]SINGLE RAT!!",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "i'm sorry jimmy but he's right. you have too low of a skill level."
+			},
+			{
+				"speaking": "melinda",
+				"quote": "i suggest walking that trail to get some insight.",
+				"unskippable": "true",
+				"cam_x": 640,
+				"cam_y": -60
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "fine"
+			}
+		]
+	},
+
+	"meet-melinda":{
+		"quotes": [
+			{
+				"speaking": "melinda",
+				"quote": "i suggest heading up that trail for some insight.",
+				"cam_x": 640,
+				"cam_y": -60
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "whatever."
+			}
+			
+		]
+	},
+
+	"melinda-didn't-find-it":{
+		"quotes":[
+			{
+				"speaking": "melinda",
+				"quote": "did you find it?"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "find what?"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "did you even walk the trail, kid?"
+			}
+		]
+	},
+
+	"melinda-again":{
+		"quotes":[
+			{
+				"speaking": "melinda",
+				"quote": "did you find it?"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "this?"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "*hands book*",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "\"jason's guide to rat hunting -",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[b][shake]JASON?!?!",
+				"emotion": "surprised",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[b][shake]THAT'S MY PA!!!",
+				"emotion": "surprised",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[shake]READ IT!!",
+				"emotion": "surprised",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "alright."
+			},
+			{
+				"speaking": "melinda",
+				"quote": "*turns page*"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "\"3 keys to rat hunting:\""
+			},
+			{
+				"speaking": "melinda",
+				"quote": "\"1: go to 'David's Clearing'\"..",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "*looks up at jimmy*"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "*turns page*"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "\"2: use the [pulse]'call of the rats'\""
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[shake]what on earth is that -"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "wait, there's a note here."
+			},
+			{
+				"speaking": "melinda",
+				"quote": "*squints* jeez it's written in fontsize 1!",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "\"to aquire this ability you must use your shotty upon existing prey.\"",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "\"then, ingest the rat's being.\"",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "\"only then will this bond be created.\"",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "what could that mean?"
+			},
+			{
+				"speaking": "melinda",
+				"quote": "\"use your shotty upon existing prey\". i have no idea what that means.",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "me neither. i'll just try random stuff."
+			}
+		]
+	},
+
 	"conversation2": {
 		"quotes": [
 			{
@@ -166,14 +384,50 @@
 	"rat-killed": {
 		"quotes": [
 			{
-				"speaking": "steven",
-				"quote": "good stuff!"
+				"speaking": "melinda",
+				"quote": "good thinking!",
+				"emotion":"surprised"
 			},
 			{
-				"speaking": "steven",
-				"quote": "now hurry and grab it!",
-				"cam_x": "50",
-				"cam_y": "50"
+				"speaking": "melinda",
+				"quote": "now what?"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "*gulp*.."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "i think i know.."
+			}
+		]
+	},
+
+	"eat-rat":{
+		"quotes": [
+			{
+				"speaking": "jimmy",
+				"quote": "oh boy.."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "here goes nothing.."
+			}
+		]
+	},
+
+	"after-eating-rat":{
+		"quotes": [
+			{
+				"speaking": "jimmy",
+				"quote": "not bad!",
+				"emotion": "surprised",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "something's.. different.",
+				"unskippable" : "true"
 			}
 		]
 	},
@@ -192,24 +446,133 @@
 			}
 		]
 	},
-	
+
+	"town-sign": {
+		"quotes": [
+			{
+				"speaking": "sign",
+				"quote": "welcome to town!"
+			}
+		]
+	},
+
+	"david's-clearing-sign": {
+		"quotes": [
+			{
+				"speaking": "sign",
+				"quote": "David's Clearing -",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "sign",
+				"quote": ".."
+			},
+			{
+				"speaking": "sign",
+				"quote": "*missing person poster hangs here* - ",
+				"unskippable" : "true"
+			},
+			{
+				"speaking": "sign",
+				"quote": "missing: jason",
+				"unskippable" : "true"
+			}
+		]
+	},
+		
+	"use-call-of-the-rats":{
+		"quotes": [
+			{
+				"speaking": "jimmy",
+				"quote": "..."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "well..."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "'call of the rats'..."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]...",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "*gathers self*"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]...",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[tornado]SQUAAAAAAAAAAAA!!!!!!",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]...",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "nothing..",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[tornado] COME ON RATS",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]...",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "*closes eyes*",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "*deep breath*",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[tornado]MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]..."
+			}
+		]
+	},
+
 	"construction-worker":{
 		"quotes": [
 			{
 				"speaking": "bob (builder)",
-				"quote": "the road is closed. i can't afford another paycut..",
+				"quote": "the road is closed. i can't afford another paycuts.."
 			},
 			{
 				"speaking": "bob (builder)",
-				"quote": "*under breath* not after timmy got through.. poor timmy.",
+				"quote": "not after timmy got through.. poor timmy."
 			},
 			{
 				"speaking": "jimmy",
 				"quote": "*sees bob's nametag*",
+				"unskippable": "true"
 			},
 			{
 				"speaking": "jimmy",
-				"quote": "bob? i thought you were...",
+				"quote": "bob? i thought you were..."
 			},
 			{
 				"speaking": "jimmy",
@@ -219,11 +582,11 @@
 			},
 			{
 				"speaking": "bob (builder)",
-				"quote": "listen kid. the name's bob.",
+				"quote": "listen kid. the name's bob."
 			},
 			{
 				"speaking": "bob (builder)",
-				"quote": "if you have a problem with that, you can take it up with my aunt cindy.",
+				"quote": "if you have a problem with that, you can take it up with my aunt cindy."
 			},
 			{
 				"speaking": "bob (builder)",

@@ -8,8 +8,7 @@ extends Control
 @export var player : Player
 
 var current_conversation : ConversationData
-var other_speaker : Speaker = null
-var other_position : Vector2 = Vector2.ZERO
+var conversation_instance : ConversationInstance
 var current_quote_index : int = 0
 var unskippable : bool
 
@@ -22,8 +21,8 @@ func _ready():
 func start_conversation(conversation_instance : ConversationInstance):
 	if current_conversation != null: return
 	
-	other_position = conversation_instance.camera_position
-	other_speaker = conversation_instance.speaker
+	self.conversation_instance = conversation_instance
+	self.conversation_instance.speakers.append(player.speaker)
 	animation_player.play("show")
 	camera.zoom_to(11)
 	
@@ -32,20 +31,26 @@ func start_conversation(conversation_instance : ConversationInstance):
 
 
 func display_dialogue(dialogue_data : DialogueData):
-	if dialogue_data.set_cam_pos:
-		camera.move_to(Vector2(dialogue_data.cam_x, dialogue_data.cam_y))
-		print(str(dialogue_data.cam_x) + " " + str(dialogue_data.cam_y))
-	elif dialogue_data.speaking == "jimmy":
-		camera.reset_position()
-	else:
-		camera.move_to(other_speaker.global_position)
+	# if dialogue_data.set_cam_pos:
+	# 	camera.move_to(Vector2(dialogue_data.cam_x, dialogue_data.cam_y))
+	# 	print(str(dialogue_data.cam_x) + " " + str(dialogue_data.cam_y))
+	# elif dialogue_data.speaking == "jimmy":
+	# 	camera.reset_position()
+	# else:
+	# 	camera.move_to(other_speaker.global_position)
 	
-	if dialogue_data.speaking == "jimmy":
-		player.speaker.set_emotion(dialogue_data.emotion)
-		other_speaker.set_emotion("")
-	else:
-		other_speaker.set_emotion(dialogue_data.emotion)
-		player.speaker.set_emotion("")
+	for speaker in conversation_instance.speakers:
+		if speaker.speaker_name == dialogue_data.speaking:
+			
+			if dialogue_data.set_cam_pos:
+				camera.move_to(Vector2(dialogue_data.cam_x, dialogue_data.cam_y))
+			else:
+				camera.move_to(speaker.global_position)
+			
+			speaker.set_emotion(dialogue_data.emotion)
+		else:
+			speaker.set_emotion("")
+
 
 	if current_quote_index <= 0 or current_conversation.quotes[current_quote_index - 1].speaking != dialogue_data.speaking:
 		name_label.visible_characters = 0
@@ -61,8 +66,8 @@ func display_dialogue(dialogue_data : DialogueData):
 
 func end_conversation():
 	# reset emotions
-	other_speaker.set_emotion("")
-	player.speaker.set_emotion("")
+	for speaker in conversation_instance.speakers:
+		speaker.set_emotion("")
 	
 	# reset UI
 	animation_player.play("hide")
@@ -73,6 +78,7 @@ func end_conversation():
 	camera.reset_position()
 	
 	current_conversation = null
+	conversation_instance = null
 	current_quote_index = 0
 	SignalBus.emit_signal("conversation_over")
 
@@ -92,7 +98,7 @@ func _input(event):
 		if event.is_action_pressed("interact"):
 			if current_conversation != null:
 				# the - 23 accounts for the bbcodes [center][wave amp=13.0]
-				if dialogue_label.visible_characters < dialogue_label.text.length() - 23:
+				if dialogue_label.visible_characters < dialogue_label.text.length() - 13:
 					if unskippable == false:
 						dialogue_label.visible_characters = dialogue_label.text.length()
 				else:

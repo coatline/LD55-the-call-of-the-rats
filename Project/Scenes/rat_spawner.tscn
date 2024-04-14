@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb8gif4fos1ld"]
+
+[ext_resource type="Script" path="res://Scripts/rat_spawner.gd" id="1_nn588"]
+
+[node name="RatSpawner" type="Node2D"]
+position = Vector2(894, -11)
+script = ExtResource("1_nn588")

@@ -5,11 +5,14 @@ extends CharacterBody2D
 @export var mover : Node2D
 @export var speaker : Speaker
 @export var shoot_behavior : ShootBehavior
+@export var rat_spawners_parent : Node2D
 
 var knows_call_of_the_rats : bool = false
 var shotty_equipped : bool = false
 var has_shotty : bool = false
 var can_move : bool = false
+var just_picked_up_rat : bool = false
+var eating_rat : bool = false
 
 func _ready():
 	SignalBus.connect("picked_up_node", picked_up_node)
@@ -20,6 +23,19 @@ func _ready():
 	can_move = true
 
 func conversation_over():
+	if just_picked_up_rat:
+		eating_rat = true
+		await get_tree().create_timer(3.5).timeout
+		SignalBus.start_conversation.emit(ConversationInstance.new("after-eating-rat", Vector2.ZERO, []))
+		just_picked_up_rat = false
+		eating_rat = false
+		return
+	elif GameData.used_call:
+		GameData.used_call = false
+		# summon rats
+		for rat_spawner in rat_spawners_parent.get_children():
+			rat_spawner.spawn()
+	
 	can_move = true
 
 func conversation_started(_info):
@@ -45,13 +61,16 @@ func _process(_delta):
 			shoot_behavior.fire()
 	else:
 		shotty_equipped = false
-	
-	if Input.is_action_pressed("call_rats"):
-		if knows_call_of_the_rats:
-			
-			pass
 
 func picked_up_node(node):
 	if node.name == "Shotty":
 		has_shotty = true
 		shotty_equipped = true
+	elif node.name == "Rat_pickup":
+		if knows_call_of_the_rats == false:
+			knows_call_of_the_rats = true
+			just_picked_up_rat = true
+			SignalBus.start_conversation.emit(ConversationInstance.new("eat-rat", Vector2.ZERO, []))
+			SignalBus.gained_call_of_the_rats.emit()
+	elif node.name == "Book":
+		SignalBus.picked_up_book.emit()

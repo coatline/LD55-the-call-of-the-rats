@@ -11,7 +11,8 @@ func _on_area_entered(area : Area2D):
 
 func _on_area_exited(area):
 	if area.is_in_group("Interactable"):
-		for i in interactables.size():
+		for i in range(interactables.size() - 1, 0):
+			if i < 0: return
 			var trigger = interactables[i]
 			
 			if trigger == area:
@@ -21,6 +22,10 @@ func _on_area_exited(area):
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if interactables.size() > 0:
+			while interactables.size() > 0 and interactables[0] == null:
+				interactables.remove_at(0)
+			if interactables.size() == 0:
+				return
 			interactables[0].interact()
 			interactables.remove_at(0)
 			

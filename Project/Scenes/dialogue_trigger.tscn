@@ -5,17 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://bxyudhibcft4e" path="res://Graphics/Old/ant.png" id="3_h02kv"]
 [ext_resource type="Script" path="res://Scripts/Dialogue/speaker.gd" id="4_crark"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ad6u"]
-size = Vector2(11.3137, 10.6066)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfgsd"]
+size = Vector2(12, 12)
 
-[node name="DialogueTrigger" type="Area2D" groups=["Interactable"]]
+[node name="DialogueTrigger" type="Area2D" node_paths=PackedStringArray("question_mark", "collision_shape", "speakers") groups=["Interactable"]]
 process_mode = 3
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_16n51")
+question_mark = NodePath("QuestionMark")
+collision_shape = NodePath("CollisionShape2D")
+speakers = [NodePath("Speaker")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_2ad6u")
+shape = SubResource("RectangleShape2D_cfgsd")
 
 [node name="QuestionMark" type="RichTextLabel" parent="."]
 visible = false
@@ -43,6 +46,3 @@ texture = ExtResource("3_h02kv")
 
 [node name="Speaker" type="Node2D" parent="."]
 script = ExtResource("4_crark")
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
