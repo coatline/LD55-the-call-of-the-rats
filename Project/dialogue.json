@@ -1,0 +1,235 @@
+{
+	"meet-bob": {
+		"quotes": [
+			{
+				"speaking": "??",
+				"quote": "hey youngin."
+			},
+			{
+				"speaking": "??",
+				"quote": "what're you doin out here?"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "looking for my pa. [shake rate=50.0 level=15]he..."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]..."
+			},
+			{
+				"speaking": "bob",
+				"quote": "well the name's bob, son."
+			},
+			{
+				"speaking": "bob",
+				"quote": "is that your shotty over there?",
+				"cam_x": "16",
+				"cam_y": "17"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "yesir. must've dropped it."
+			},
+			{
+				"speaking": "bob",
+				"quote": "well, go grab it bub."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "the name's jimmy."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "son."
+			},
+			{
+				"speaking": "bob",
+				"quote": "*narrows eyes*"
+			}
+		]
+	},
+
+	"bob-after-shotty":{
+		"quotes": [
+			{
+				"speaking": "bob",
+				"quote": "got it?",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[shake]YEA BOBBY!",
+				"unskippable": "true",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "bob",
+				"quote": "[shake rate=50.0 level=15 connected=0]DON'T CALL ME THAT!!!",
+				"emotion": "surprised",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]...",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "bob",
+				"quote": "[pulse]...",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "bob",
+				"quote": "the name's bob, son.",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "bob",
+				"quote": "anyways, you know how to use it?",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "bob",
+				"quote": "(right) click and hold your tongue to hold it out, and (left) click your heels together to shoot.",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "i'm aware big b.",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "bob",
+				"quote": "[pulse]..."
+			},
+			{
+				"speaking": "bob",
+				"quote": "okay.."
+			},
+			{
+				"speaking": "bob",
+				"quote": "you should head to the town east of here.",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "bob",
+				"quote": "they're holding some sort of rat hunting competition. whole town's involved.",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "oh, that's my hometown. i know all about that rat hunting."
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "my pa was the greatest.",
+				"unskippable": "true"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "i've always wanted to win. especially ever since he..",
+				"unskippable": "true"
+			}
+		]
+	},
+
+	"conversation2": {
+		"quotes": [
+			{
+				"speaking": "John",
+				"quote": "I'm John!",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "John",
+				"quote": "I'm John!",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "John",
+				"quote": "I'm John!",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "John",
+				"quote": "I'm John!",
+				"emotion": "surprised"
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "shutup"
+			}
+		]
+	},
+
+	"rat-killed": {
+		"quotes": [
+			{
+				"speaking": "steven",
+				"quote": "good stuff!"
+			},
+			{
+				"speaking": "steven",
+				"quote": "now hurry and grab it!",
+				"cam_x": "50",
+				"cam_y": "50"
+			}
+		]
+	},
+
+	"road-closed-sign": {
+		"quotes": [
+			{
+				"speaking": "sign",
+				"quote": "closed for construction:"
+			},
+			{
+				"speaking": "sign",
+				"quote": "resident's street",
+				"cam_x": "480",
+				"cam_y": "197"
+			}
+		]
+	},
+	
+	"construction-worker":{
+		"quotes": [
+			{
+				"speaking": "bob (builder)",
+				"quote": "the road is closed. i can't afford another paycut..",
+			},
+			{
+				"speaking": "bob (builder)",
+				"quote": "*under breath* not after timmy got through.. poor timmy.",
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "*sees bob's nametag*",
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "bob? i thought you were...",
+			},
+			{
+				"speaking": "jimmy",
+				"quote": "[pulse]...",
+				"cam_x": "123",
+				"cam_y": "4"
+			},
+			{
+				"speaking": "bob (builder)",
+				"quote": "listen kid. the name's bob.",
+			},
+			{
+				"speaking": "bob (builder)",
+				"quote": "if you have a problem with that, you can take it up with my aunt cindy.",
+			},
+			{
+				"speaking": "bob (builder)",
+				"quote": "now beat it before i literally beat you.",
+				"emotion": "surprised"
+			}
+		]
+	}
+}

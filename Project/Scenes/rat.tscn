@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw5virt423i0v"]
+
+[ext_resource type="Script" path="res://Scripts/rat.gd" id="1_1ox3r"]
+[ext_resource type="Texture2D" uid="uid://jx8ulcd0fva1" path="res://Graphics/character_sheet.png" id="1_csod7"]
+[ext_resource type="Script" path="res://Scripts/mover.gd" id="1_jvkll"]
+[ext_resource type="Script" path="res://Scripts/hit_area.gd" id="4_l7il0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ccew7"]
+radius = 2.0
+height = 6.0
+
+[node name="Rat" type="CharacterBody2D"]
+script = ExtResource("1_1ox3r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("characterBody")]
+texture = ExtResource("1_csod7")
+region_enabled = true
+region_rect = Rect2(90, 32, 3, 5)
+script = ExtResource("1_jvkll")
+characterBody = NodePath("..")
+
+[node name="RatHitArea" type="Area2D" parent="." node_paths=PackedStringArray("to_destroy")]
+script = ExtResource("4_l7il0")
+to_destroy = NodePath("..")
+
+[node name="Hitbox" type="CollisionShape2D" parent="RatHitArea"]
+shape = SubResource("CapsuleShape2D_ccew7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ccew7")
+
+[connection signal="died" from="RatHitArea" to="." method="_on_rat_hit_area_died"]

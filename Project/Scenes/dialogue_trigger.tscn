@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct04g8lnu762u"]
+
+[ext_resource type="Script" path="res://Scripts/Dialogue/dialogue_triggerer.gd" id="1_16n51"]
+[ext_resource type="FontFile" uid="uid://c1o0c81mcqcw7" path="res://Fonts/GochiHand-Regular.ttf" id="2_3tige"]
+[ext_resource type="Texture2D" uid="uid://bxyudhibcft4e" path="res://Graphics/Old/ant.png" id="3_h02kv"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/speaker.gd" id="4_crark"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ad6u"]
+size = Vector2(11.3137, 10.6066)
+
+[node name="DialogueTrigger" type="Area2D" groups=["Interactable"]]
+process_mode = 3
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_16n51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2ad6u")
+
+[node name="QuestionMark" type="RichTextLabel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -14.0
+offset_right = 60.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.125, 0.125)
+theme_override_fonts/normal_font = ExtResource("2_3tige")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[wave][center]?"
+fit_content = true
+scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_h02kv")
+
+[node name="Speaker" type="Node2D" parent="."]
+script = ExtResource("4_crark")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

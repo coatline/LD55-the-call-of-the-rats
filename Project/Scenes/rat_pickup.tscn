@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp6yqig31vxop"]
+
+[ext_resource type="Script" path="res://Scripts/pickup_able.gd" id="1_6c8pw"]
+[ext_resource type="Texture2D" uid="uid://jx8ulcd0fva1" path="res://Graphics/character_sheet.png" id="2_p6v0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2w3o"]
+size = Vector2(4.39632, 6.31884)
+
+[node name="Rat_pickup" type="Node2D"]
+
+[node name="PickupAble" type="Area2D" parent="." groups=["Interactable"]]
+rotation = 0.279253
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_6c8pw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupAble"]
+shape = SubResource("RectangleShape2D_i2w3o")
+
+[node name="Sprite2D" type="Sprite2D" parent="PickupAble"]
+self_modulate = Color(0.258824, 0.258824, 0.258824, 1)
+texture = ExtResource("2_p6v0x")
+region_enabled = true
+region_rect = Rect2(90, 32, 3, 5)
+
+[connection signal="area_entered" from="PickupAble" to="PickupAble" method="_on_area_entered"]
+[connection signal="area_exited" from="PickupAble" to="PickupAble" method="_on_area_exited"]

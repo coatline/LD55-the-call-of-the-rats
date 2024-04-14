@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://db5jlfcom2a8o"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_6uv6y"]
+[ext_resource type="PackedScene" uid="uid://b51w8m4mild0g" path="res://Scenes/ant.tscn" id="1_oqmie"]
+
+[node name="Player" type="Node2D" node_paths=PackedStringArray("ant")]
+script = ExtResource("1_6uv6y")
+ant = NodePath("Ant")
+
+[node name="Ant" parent="." instance=ExtResource("1_oqmie")]
+
+[node name="Camera2D" type="Camera2D" parent="Ant"]
+zoom = Vector2(3, 3)

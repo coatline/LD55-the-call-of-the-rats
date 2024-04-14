@@ -1,0 +1,42 @@
+{
+	"conversation1": {
+		"talking": [
+			{
+				"name": "Jimmy",
+				"quote": "I'm jimmy!"
+			},
+			{
+				"name": "Jimmy",
+				"quote": "I'm jimmy!"
+			},
+			{
+				"name": "Jimmy",
+				"quote": "I'm jimmy!"
+			},
+			{
+				"name": "Jimmy",
+				"quote": "I'm jimmy!"
+			}
+		]
+	},
+	"conversation2": {
+		"talking": [
+			{
+				"name": "John",
+				"quote": "I'm John!"
+			},
+			{
+				"name": "John",
+				"quote": "I'm John!"
+			},
+			{
+				"name": "John",
+				"quote": "I'm John!"
+			},
+			{
+				"name": "John",
+				"quote": "I'm John!"
+			}
+		]
+	}
+}

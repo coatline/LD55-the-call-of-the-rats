@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhb020rs3kt2a"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_msgp6"]
+[ext_resource type="FontFile" uid="uid://c1o0c81mcqcw7" path="res://Fonts/GochiHand-Regular.ttf" id="2_3oww2"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_msgp6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -287.0
+offset_right = 287.0
+offset_bottom = 70.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_3oww2")
+theme_override_font_sizes/normal_font_size = 56
+bbcode_enabled = true
+text = "[center][wave]the call of the rats"
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -66.0
+offset_right = 54.5
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -23.0
+offset_right = 54.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]
