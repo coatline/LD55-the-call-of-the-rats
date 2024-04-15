@@ -2,43 +2,31 @@ class_name Player
 
 extends CharacterBody2D
 
-@export var mover : Node2D
-@export var speaker : Speaker
+@export var mover : Mover
 @export var shoot_behavior : ShootBehavior
-@export var rat_spawners_parent : Node2D
+@export var player_animation : PlayerAnimation
+@export var bike_sprite : Sprite2D
+@export var has_bike : bool
 
-var knows_call_of_the_rats : bool = false
 var shotty_equipped : bool = false
 var has_shotty : bool = false
 var can_move : bool = false
-var just_picked_up_rat : bool = false
-var eating_rat : bool = false
+var speed = 1
 
 func _ready():
-	SignalBus.connect("picked_up_node", picked_up_node)
-	SignalBus.connect("conversation_over", conversation_over)
-	SignalBus.connect("start_conversation", conversation_started)
-	GameData.player = self
-	#await get_tree().create_timer(4.5).timeout
-	can_move = true
-
-func conversation_over():
-	if just_picked_up_rat:
-		eating_rat = true
-		await get_tree().create_timer(3.5).timeout
-		SignalBus.start_conversation.emit(ConversationInstance.new("after-eating-rat", Vector2.ZERO, []))
-		just_picked_up_rat = false
-		eating_rat = false
-		return
-	elif GameData.used_call:
-		GameData.used_call = false
-		# summon rats
-		for rat_spawner in rat_spawners_parent.get_children():
-			rat_spawner.spawn()
+	SignalBus.picked_up_node.connect(picked_up_node)
+	SignalBus.conversation_ended.connect(conversation_ended)
+	SignalBus.start_conversation.connect(conversation_started)
 	
+	GameData.player = self
+	
+	await get_tree().create_timer(5.6).timeout
 	can_move = true
 
-func conversation_started(_info):
+func conversation_ended(_conv : ConversationData):
+	can_move = true
+
+func conversation_started(_conv : ConversationData):
 	can_move = false
 
 func _process(_delta):
@@ -49,7 +37,9 @@ func _process(_delta):
 	if can_move == true:
 		var x_input : float = Input.get_axis("left","right")
 		var y_input : float = Input.get_axis("up", "down")
-		mover.move(Vector2(x_input, y_input).normalized())
+		
+		mover.max_speed = speed * 35
+		mover.move(Vector2(x_input, y_input).normalized() * speed)
 	else:
 		mover.move(Vector2.ZERO)
 		return
@@ -61,16 +51,21 @@ func _process(_delta):
 			shoot_behavior.fire()
 	else:
 		shotty_equipped = false
+	
+	if Input.is_action_pressed("skip_conversation"):
+		speed = 2
 
 func picked_up_node(node):
 	if node.name == "Shotty":
 		has_shotty = true
 		shotty_equipped = true
 	elif node.name == "Rat_pickup":
-		if knows_call_of_the_rats == false:
-			knows_call_of_the_rats = true
-			just_picked_up_rat = true
-			SignalBus.start_conversation.emit(ConversationInstance.new("eat-rat", Vector2.ZERO, []))
-			SignalBus.gained_call_of_the_rats.emit()
+		if GameData.has_call_of_the_rats == false:
+			SignalBus.start_conversation.emit(GameData.get_conversation("eat-rat"))
 	elif node.name == "Book":
 		SignalBus.picked_up_book.emit()
+
+func give_bike():
+	speed = 2
+	has_bike = true
+	bike_sprite.visible = true

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpeakerSettings" load_steps=2 format=3 uid="uid://de6dqbtjsxlqw"]
+
+[ext_resource type="Script" path="res://Scripts/DialogueTriggerers/speaker_settings.gd" id="1_7nua6"]
+
+[resource]
+script = ExtResource("1_7nua6")
+speaker_name = "jimmy"
+show_question_mark = false

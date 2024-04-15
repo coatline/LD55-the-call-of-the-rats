@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb8gif4fos1ld"]
+[gd_scene load_steps=3 format=3 uid="uid://cb8gif4fos1ld"]
 
-[ext_resource type="Script" path="res://Scripts/rat_spawner.gd" id="1_nn588"]
+[ext_resource type="Script" path="res://Scripts/Rat/rat_spawner.gd" id="1_nn588"]
+[ext_resource type="PackedScene" uid="uid://cw5virt423i0v" path="res://Scenes/rat.tscn" id="2_0l58q"]
 
 [node name="RatSpawner" type="Node2D"]
 position = Vector2(894, -11)
 script = ExtResource("1_nn588")
+rat_scene = ExtResource("2_0l58q")

@@ -8,7 +8,7 @@ var cam_y : float
 var emotion : String
 var unskippable : bool
 
-func from_json(json_dict):
+func _init(json_dict):
 	speaking = json_dict["speaking"]
 	quote = json_dict["quote"]
 	

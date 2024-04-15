@@ -1,28 +1,18 @@
 class_name Speaker
-extends Node
+extends Node2D
 
 @export var speaker_name : String
-@export var show_question_mark : bool
-@export_group("AnimatedSprite2D")
-@export var animatedSprite2D : AnimatedSprite2D
-@export_group("Sprite2D")
-@export var surprised_texture : Texture2D
-@export var normal_texture : Texture2D
+@export var speaker_key : String
+@export var speaker_settings : SpeakerSettings
+
 @export var sprite2D : Sprite2D
+@export var animatedSprite2D : AnimatedSprite2D
 
-var active : bool = false
+var active : bool
 
-func set_emotion(emotion : String):
-	active = emotion != ""
-	
-	if animatedSprite2D:
-		if emotion == "":
-			emotion = "idle"
-		animatedSprite2D.play(emotion)
-		return
-	elif sprite2D:
-		match(emotion):
-			"":
-				sprite2D.texture = normal_texture
-			"surprised":
-				sprite2D.texture = surprised_texture
+func set_is_active(b : bool):
+	active = b
+
+func try_update_emotion(emotion):
+	if speaker_settings:
+		speaker_settings.set_emotion(emotion, animatedSprite2D, sprite2D)

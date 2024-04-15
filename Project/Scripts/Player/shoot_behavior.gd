@@ -8,10 +8,14 @@ extends Node2D
 @export var bullet_count : int
 @export var bullet_spread : float
 @export var shoot_delay : float
+@export var sound : Sound
+@export var audio : AudioStreamPlayer2D
 
 var shooting : bool = false
 
 func fire():
+	audio.stream = sound.get_random()
+	audio.play()
 	var normal = (attack_point.global_position - global_position).normalized()
 	
 	for x in range(0, 10):

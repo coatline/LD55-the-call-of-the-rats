@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Sound" load_steps=4 format=3 uid="uid://dvxbbdkefjcsj"]
+
+[ext_resource type="AudioStream" uid="uid://c5is4n7ivmgqp" path="res://sfx/shoot.ogg" id="1_11m0p"]
+[ext_resource type="AudioStream" uid="uid://djfyu0hfs4k3v" path="res://sfx/shoot2.ogg" id="2_1o0qp"]
+[ext_resource type="Script" path="res://Scripts/sound.gd" id="7_n7aie"]
+
+[resource]
+script = ExtResource("7_n7aie")
+clips = Array[AudioStream]([ExtResource("1_11m0p"), ExtResource("2_1o0qp")])

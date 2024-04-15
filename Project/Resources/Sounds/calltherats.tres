@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Sound" load_steps=3 format=3 uid="uid://d3ka2bou7x2m3"]
+
+[ext_resource type="AudioStream" uid="uid://ddk3aryuss112" path="res://sfx/call_of_the_rats.ogg" id="1_w4cvm"]
+[ext_resource type="Script" path="res://Scripts/sound.gd" id="4_fpjcp"]
+
+[resource]
+script = ExtResource("4_fpjcp")
+clips = Array[AudioStream]([ExtResource("1_w4cvm")])

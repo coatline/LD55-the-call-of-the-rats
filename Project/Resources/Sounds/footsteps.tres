@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Sound" load_steps=5 format=3 uid="uid://iwmomy1rpdd6"]
+
+[ext_resource type="AudioStream" uid="uid://renqly4e223c" path="res://sfx/footsteps/footstep1.ogg" id="1_ts35w"]
+[ext_resource type="AudioStream" uid="uid://bd3s4nn3mflt4" path="res://sfx/footsteps/footstep2.ogg" id="2_bxbpg"]
+[ext_resource type="AudioStream" uid="uid://cfpm1v4b18pux" path="res://sfx/footsteps/footstep3.ogg" id="3_jxyan"]
+[ext_resource type="Script" path="res://Scripts/sound.gd" id="7_xddv0"]
+
+[resource]
+script = ExtResource("7_xddv0")
+clips = Array[AudioStream]([ExtResource("1_ts35w"), ExtResource("2_bxbpg"), ExtResource("3_jxyan")])

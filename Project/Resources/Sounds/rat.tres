@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Sound" load_steps=5 format=3 uid="uid://de8tdq0ukaad8"]
+
+[ext_resource type="AudioStream" uid="uid://cwjivwuqobykg" path="res://sfx/rat_die/rat-die1.ogg" id="1_8xglu"]
+[ext_resource type="AudioStream" uid="uid://dt2ma30i04o6m" path="res://sfx/rat_die/rat-die2.ogg" id="2_4qcvn"]
+[ext_resource type="AudioStream" uid="uid://ca76v6v7d05wq" path="res://sfx/rat_die/rat-die3.ogg" id="3_nlp1s"]
+[ext_resource type="Script" path="res://Scripts/sound.gd" id="7_n23ig"]
+
+[resource]
+script = ExtResource("7_n23ig")
+clips = Array[AudioStream]([ExtResource("1_8xglu"), ExtResource("2_4qcvn"), ExtResource("3_nlp1s")])

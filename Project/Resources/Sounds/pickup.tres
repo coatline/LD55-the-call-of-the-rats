@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Sound" load_steps=3 format=3 uid="uid://dcsp8mn7rrid1"]
+
+[ext_resource type="AudioStream" uid="uid://c10wepjymxwat" path="res://sfx/pickup.ogg" id="1_htmyy"]
+[ext_resource type="Script" path="res://Scripts/sound.gd" id="7_t4r4x"]
+
+[resource]
+script = ExtResource("7_t4r4x")
+clips = Array[AudioStream]([ExtResource("1_htmyy")])

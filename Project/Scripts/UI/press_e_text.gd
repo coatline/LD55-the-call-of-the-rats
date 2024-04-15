@@ -2,11 +2,10 @@ extends RichTextLabel
 
 
 func _ready():
-	SignalBus.connect("show_press_e", show_at)
-	SignalBus.connect("hide_press_e", hide_e)
+	SignalBus.show_press_e.connect(show_e)
+	SignalBus.hide_press_e.connect(hide_e)
 
-func show_at(pos : Vector2):
-	position = pos
+func show_e():
 	visible = true
 
 func hide_e():

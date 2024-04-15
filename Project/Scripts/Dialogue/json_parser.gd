@@ -24,15 +24,13 @@ func load_json_file():
 
 func data_from_json():
 	for conversation_key in json_dict.keys():
-		var conversation_instance = ConversationData.new()
-		conversation_instance.from_json(json_dict[conversation_key])
-		
-		conversation_dict[conversation_key] = conversation_instance
+		var conversation_data = ConversationData.new(json_dict[conversation_key], conversation_key)
+		conversation_dict[conversation_key] = conversation_data
 
-func get_conversation(key : String):
+func get_conversation(key : String) -> ConversationData:
 	if conversation_dict.has(key) == false:
-		print(key)
 		push_error("no conversation labeled: " + key)
 		assert("no conversation labeled: " + key)
+		return null
 	
 	return conversation_dict[key]

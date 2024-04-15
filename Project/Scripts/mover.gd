@@ -1,3 +1,4 @@
+class_name Mover
 extends Node2D
 
 @export var acceleration = 300.0
@@ -6,7 +7,7 @@ extends Node2D
 
 @export var characterBody : CharacterBody2D
 @export var footstepper : AudioStreamPlayer2D
-var footstep_sound = preload("res://Audio/grass_footstep.ogg")
+@export var sound : Sound
 
 var current_acceleration : Vector2 = Vector2.ZERO
 var input_velocity : Vector2 = Vector2.ZERO
@@ -27,7 +28,7 @@ func _physics_process(delta):
 		characterBody.rotation_degrees = interval_angle
 		
 		if footstepper != null:
-			footstepper.moved(footstep_sound)
+			footstepper.moved(sound.get_random())
 	
 	characterBody.move_and_slide()
 

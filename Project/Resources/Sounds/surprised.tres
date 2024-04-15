@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Sound" load_steps=6 format=3 uid="uid://dgn5veuloef6v"]
+
+[ext_resource type="AudioStream" uid="uid://dbgtngbmje7uu" path="res://sfx/surprised/surprised1.ogg" id="1_n8xv5"]
+[ext_resource type="AudioStream" uid="uid://dtqa6w44x6w32" path="res://sfx/surprised/surprised2.ogg" id="2_h22ky"]
+[ext_resource type="Script" path="res://Scripts/sound.gd" id="2_i6du3"]
+[ext_resource type="AudioStream" uid="uid://bn6551k4n5c6w" path="res://sfx/surprised/surprised3.ogg" id="3_36gca"]
+[ext_resource type="AudioStream" uid="uid://csrtkypy23ng0" path="res://sfx/surprised/surprised4.ogg" id="4_dxpm6"]
+
+[resource]
+script = ExtResource("2_i6du3")
+clips = Array[AudioStream]([ExtResource("1_n8xv5"), ExtResource("2_h22ky"), ExtResource("3_36gca"), ExtResource("4_dxpm6")])
