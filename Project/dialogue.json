@@ -99,8 +99,7 @@
 			},
 			{
 				"speaking": "bob",
-				"quote": "(right) click and hold your tongue to hold it out, and (left) click your heels together to shoot.",
-				"unskippable": "true"
+				"quote": "(right) click and hold your tongue to hold it out, and (left) click your heels together to shoot."
 			},
 			{
 				"speaking": "bob",
@@ -404,6 +403,11 @@
 			{
 				"speaking": "jimmy",
 				"quote": "me neither. i'll just try random stuff."
+			},
+			{
+				"speaking": "melinda",
+				"quote": "i'll leave you to it then.",
+				"unskippable": "true"
 			}
 		]
 	},
@@ -526,8 +530,10 @@
 		]
 	},
 	"road-closed-sign": {
+		"repeatable": "true",
 		"speakers": [
-			"road-closed-sign"
+			"road-closed-sign",
+			"jimmy"
 		],
 		"quotes": [
 			{
@@ -543,8 +549,10 @@
 		]
 	},
 	"town-sign": {
+		"repeatable": "true",
 		"speakers": [
-			"town-sign"
+			"town-sign",
+			"jimmy"
 		],
 		"quotes": [
 			{
@@ -554,8 +562,10 @@
 		]
 	},
 	"david's-clearing-sign": {
+		"repeatable": "true",
 		"speakers": [
-			"david's-clearing-sign"
+			"david's-clearing-sign",
+			"jimmy"
 		],
 		"quotes": [
 			{
@@ -580,8 +590,10 @@
 		]
 	},
 	"bike-trail-sign": {
+		"repeatable": "true",
 		"speakers": [
-			"bike-trail-sign"
+			"bike-trail-sign",
+			"jimmy"
 		],
 		"quotes": [
 			{
@@ -627,12 +639,13 @@
 	},
 	"construction-worker": {
 		"speakers": [
-			"construction-worker"
+			"construction-worker",
+			"jimmy"
 		],
 		"quotes": [
 			{
 				"speaking": "bob (builder)",
-				"quote": "the road is closed. i can't afford another paycuts.."
+				"quote": "the road is closed. i can't afford another paycut.."
 			},
 			{
 				"speaking": "bob (builder)",
@@ -772,13 +785,13 @@
 			},
 			{
 				"speaking": "jimmy",
-				"quote": "[shake]GGS!!!",
+				"quote": "[shake]ggs PA!!!",
 				"unskippable": "true",
 				"emotion":"surprised"
 			},
 			{
 				"speaking": "pa",
-				"quote": "[shake]GGS SON!!!",
+				"quote": "[shake]ggs SON!!!",
 				"unskippable": "true",
 				"emotion":"surprised"
 			}

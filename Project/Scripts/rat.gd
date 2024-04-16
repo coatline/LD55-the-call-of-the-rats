@@ -38,6 +38,8 @@ func _physics_process(delta):
 	if fearless:
 		if distance >= 30:
 			velocity = -direction_away_from_player * speed
+		elif distance < 15:
+			velocity = direction_away_from_player * speed
 	elif fleeing:
 		velocity = direction_away_from_player * speed
 		

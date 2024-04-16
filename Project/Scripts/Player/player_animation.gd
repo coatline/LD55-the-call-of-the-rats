@@ -15,9 +15,6 @@ func _process(delta):
 	if playing_special:
 		return
 	
-	if player.can_move == false:
-		return
-	
 	if shoot_behavior.shooting:
 		return
 	

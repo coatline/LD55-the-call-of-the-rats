@@ -24,7 +24,6 @@ func conversation_ended(_info):
 	in_conversation = false
 
 func display_dialogue(speaker_name : String, quote : String, reset_name_chars : bool):
-	
 	if reset_name_chars:
 		name_label.visible_characters = 0
 	
@@ -32,6 +31,8 @@ func display_dialogue(speaker_name : String, quote : String, reset_name_chars : 
 	next_arrow.visible = false
 	name_label.text = "[center][wave amp=10.0]" + speaker_name
 	dialogue_label.text = "[center][wave amp=13.0]" + quote
+	
+	show_char()
 
 
 func still_loading_dialogue() -> bool:
@@ -42,21 +43,18 @@ func skip_dialogue():
 	dialogue_label.visible_characters = dialogue_label.text.length()
 	next_arrow.visible = true
 
-func _process(_delta):
-	if in_conversation == false: return
-	
+func show_char():
 	if dialogue_label.visible_ratio < 1 or name_label.visible_ratio < 1:
-		var time = Time.get_ticks_msec()
+		char_placed.emit()
 		
-		if time % 2 == 0:
-			char_placed.emit()
+		if dialogue_label.visible_ratio < 1:
+			dialogue_label.visible_characters += 1
+			if dialogue_label.visible_ratio >= 1:
+				next_arrow.visible = true
 			
-			if dialogue_label.visible_ratio < 1:
-				dialogue_label.visible_characters += 1
-				if dialogue_label.visible_ratio >= 1:
-					next_arrow.visible = true
-				
-			if name_label.visible_ratio < 1:
-				name_label.visible_characters += 1
-	
+		if name_label.visible_ratio < 1:
+			name_label.visible_characters += 1
+		
+		await get_tree().create_timer(.05).timeout
+		show_char()
 	

@@ -20,6 +20,7 @@ func _ready():
 	
 	GameData.player = self
 	
+	player_animation.play_anim_for("get_up", 5.5)
 	await get_tree().create_timer(5.6).timeout
 	can_move = true
 
